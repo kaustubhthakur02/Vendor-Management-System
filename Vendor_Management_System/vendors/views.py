@@ -25,5 +25,5 @@ class PurchaseCRUD(generics.RetrieveUpdateDestroyAPIView):
     print(PurchaseSerializer)
 
 def demo(request):
-    return render('index.html', request)
+    return render(request, 'index.html',)
 
