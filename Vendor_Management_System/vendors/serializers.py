@@ -16,3 +16,8 @@ class PurchaseSerializer(serializers.ModelSerializer):
             'issue_date': {'format': '%Y-%m-%dT%H:%M:%S'},
             'acknowledgment_date': {'format': '%Y-%m-%dT%H:%M:%S'},
         }
+
+class HistoricalPerformanceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HistoricalPerformance
+        fields = '__all__'

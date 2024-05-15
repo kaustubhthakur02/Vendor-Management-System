@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils import timezone
 class Vendor(models.Model):
     name = models.CharField(max_length=255)
     contact_details = models.TextField()
@@ -29,3 +29,12 @@ class PurchaseOrder(models.Model):
 
     def __str__(self):
         return self.po
+    
+
+class HistoricalPerformance(models.Model):
+    vendor = models.ForeignKey(Vendor, on_delete=models.CASCADE)
+    date = models.DateTimeField(default=timezone.now)
+    on_time_delivery_rate = models.FloatField(default=0)
+    quality_rating_avg = models.FloatField(default=0)
+    average_response_time = models.FloatField(default=0)
+    fulfillment_rate = models.FloatField(default=0)

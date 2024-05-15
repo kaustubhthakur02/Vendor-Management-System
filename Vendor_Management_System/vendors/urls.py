@@ -9,6 +9,7 @@ urlpatterns = [
     path('vendor/<int:pk>/', views.VendorCRUD.as_view()),
     path('purchase/', views.PurchaseOrderDetails.as_view()),
     path('purchase/<str:po_number>/', views.PurchaseCRUD.as_view()),
-    path('demo/', views.demo)
+    path('demo/', views.demo),
+    path('performance/<int:pk>/', views.VendorPerformanceAPIView.as_view()),
 
 ]
